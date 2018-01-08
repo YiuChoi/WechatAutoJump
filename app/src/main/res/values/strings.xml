@@ -1,4 +1,5 @@
 <resources>
-    <string name="app_name">WechatAutoJump</string>
-    <string name="copyright">©蔡小木 2018-01-03</string>
+    <string name="app_name">微信自动跳一跳</string>
+    <string name="copyright">©蔡小木 2018-01-08\n小木咖啡屋群内专供</string>
+    <string name="intro">先打开微信跳一跳，点击开始游戏，然后打开此软件点击开始，然后再切换到跳一跳，等待。。。</string>
 </resources>
