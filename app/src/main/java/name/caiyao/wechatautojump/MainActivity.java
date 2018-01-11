@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         Button start = findViewById(R.id.start);
         Button stop = findViewById(R.id.stop);
         TextView textView2 = findViewById(R.id.textView2);
+        textView2.setClickable(true);
         textView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,9 +86,9 @@ public class MainActivity extends AppCompatActivity {
                             handler.sendEmptyMessage(1);
                             Thread.sleep(5000);
                             Utils.copyFromAssetsToFile("jump", getApplicationContext());
-                            Utils.suCmd(new String[]{"dd if=" + getFilesDir() + "/jump of=/data/local/tmp/jump"}, Runtime.getRuntime().exec("su"));
+                            //Utils.suCmd(new String[]{"dd if=" + getFilesDir() + "/jump of=/data/data/"+BuildConfig.APPLICATION_ID+"/files/jump"}, Runtime.getRuntime().exec("su"));
                             process = Runtime.getRuntime().exec("su");
-                            Utils.suCmd(new String[]{"chmod +x /data/local/tmp/jump", "cd  /data/local/tmp/", "./jump 2.04"}, process);
+                            Utils.suCmd(new String[]{"chmod 777 /data/data/"+BuildConfig.APPLICATION_ID+"/files/jump", "cd  /data/data/"+BuildConfig.APPLICATION_ID+"/files", "./jump 2.04"}, process);
                         } catch (IOException e) {
                             e.printStackTrace();
                         } catch (InterruptedException e) {
